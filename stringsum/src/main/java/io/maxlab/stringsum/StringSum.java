@@ -5,8 +5,12 @@ package io.maxlab.stringsum;
  */
 public class StringSum {
 
-    public int sum(String num1, String num2) {
-        return parse(num1) + parse (num2);
+    public int sum(String... nums) {
+        int result = 0;
+        for (String num : nums) {
+            result += parse(num);
+        }
+        return result;
     }
 
     private int parse(String num) {
