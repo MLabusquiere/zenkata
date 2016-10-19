@@ -10,6 +10,7 @@
     <modules>
         <module>common</module>
         <module>fizzbuzz</module>
+        <module>stringsum</module>
     </modules>
     <packaging>pom</packaging>
     <dependencies>
