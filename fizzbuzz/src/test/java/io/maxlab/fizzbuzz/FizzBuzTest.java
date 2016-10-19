@@ -1,6 +1,5 @@
-package io.maxlab.fizzbuz;
+package io.maxlab.fizzbuzz;
 
-import io.maxlab.FizzBuzz;
 import io.maxlab.utils.Tuple;
 import org.junit.Test;
 
