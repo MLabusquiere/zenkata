@@ -34,4 +34,10 @@ public class StringSumTest {
         final StringSum stringSum = new StringSum();
         assertEquals("Expecting floating to be counted as 0", 1, stringSum.sum("2.0", "1"));
     }
+
+    @Test
+    public void trim_test()  {
+        final StringSum stringSum = new StringSum();
+        assertEquals("Expect argument to be trimmed", 3, stringSum.sum("2 ", " 1"));
+    }
 }

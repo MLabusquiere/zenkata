@@ -11,7 +11,7 @@ public class StringSum {
 
     private int parse(String num) {
         try {
-            return Integer.valueOf(num);
+            return Integer.valueOf(num.trim());
         } catch(NumberFormatException e)    {
             return 0;
         }
