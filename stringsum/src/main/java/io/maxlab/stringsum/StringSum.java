@@ -5,8 +5,10 @@ package io.maxlab.stringsum;
  */
 public class StringSum {
 
+    public static final int DEFAULT_VALUE = 0;
+
     public int sum(String... nums) {
-        int result = 0;
+        int result = DEFAULT_VALUE;
         for (String num : nums) {
             result += parse(num);
         }
@@ -16,9 +18,9 @@ public class StringSum {
     private int parse(String num) {
         try {
             Integer res = Integer.valueOf(num.trim());
-            return res < 0 ? 0 : res;
+            return res < 0 ? DEFAULT_VALUE : res;
         } catch(NumberFormatException e)    {
-            return 0;
+            return DEFAULT_VALUE;
         }
     }
 }
