@@ -35,6 +35,13 @@ public class StringSumTest {
         assertEquals("Expecting floating to be counted as 0", 1, stringSum.sum("2.0", "1"));
     }
 
+
+    @Test
+    public void integer_but_not_positive_test()  {
+        final StringSum stringSum = new StringSum();
+        assertEquals("Expecting negative to be counted as 0", 1, stringSum.sum("-2", "1"));
+    }
+
     @Test
     public void trim_test()  {
         final StringSum stringSum = new StringSum();
