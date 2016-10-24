@@ -11,6 +11,7 @@
         <module>common</module>
         <module>fizzbuzz</module>
         <module>stringsum</module>
+        <module>stringcalculator</module>
     </modules>
     <packaging>pom</packaging>
     <dependencies>
