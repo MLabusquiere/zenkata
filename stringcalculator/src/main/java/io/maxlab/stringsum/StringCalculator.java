@@ -12,14 +12,18 @@ public class StringCalculator {
     private static final String DEFAULT_SEPARATOR = ",";
 
     public int add(String input) {
-        String separator = getSeparator(input);
-        Integer result = 0;
-        for (String number : getNumbers(input,separator)) {
-            try {
-                result += Integer.valueOf(number);
-            } catch (NumberFormatException ignore) {}
+        return getNumbers(input, getSeparator(input))
+                .stream()
+                .map(this::parseNumber)
+                .collect(Collectors.summingInt(i -> i));
+    }
+
+    private Integer parseNumber(String number) {
+        try {
+            return Integer.valueOf(number);
+        } catch (NumberFormatException sendDefaultValue) {
+            return 0;
         }
-        return result;
     }
 
     private String getSeparator(String input) {
@@ -39,8 +43,8 @@ public class StringCalculator {
         }
     }
 
-    private Collection<String> getNumbers(String numbers, String separator) {
-        return Arrays.stream(numbers.split("\n"))
+    private Collection<String> getNumbers(String input, String separator) {
+        return Arrays.stream(input.split("\n"))
                 .flatMap(s -> Arrays.stream(s.split(separator)))
                 .collect(Collectors.toList());
     }
