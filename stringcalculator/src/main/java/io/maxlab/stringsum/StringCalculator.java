@@ -28,10 +28,7 @@ public class StringCalculator {
 
     private String getSeparator(String input) {
         String firstLine = input.split("\n")[0];
-        if (firstLine.length() == 1 && !isANumber(firstLine)) {
-            return firstLine;
-        }
-        return DEFAULT_SEPARATOR;
+        return firstLine.length() == 1 && !isANumber(firstLine) ? firstLine : DEFAULT_SEPARATOR;
     }
 
     private boolean isANumber(String input) {
