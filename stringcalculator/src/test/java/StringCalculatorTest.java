@@ -28,12 +28,22 @@ public class StringCalculatorTest {
 
     @Test
     public void two_number() throws Exception {
-        assertEquals("If there is only one number it should be the result", 3, stringCalculator.add("1,2"));
+        assertEquals("should add two numbers", 3, stringCalculator.add("1,2"));
     }
 
 
     @Test
     public void three_number() throws Exception {
-        assertEquals("If there is only one number it should be the result", 6, stringCalculator.add("1,2,3"));
+        assertEquals("should add the three numbers", 6, stringCalculator.add("1,2,3"));
+    }
+
+    @Test
+    public void handle_new_line_separtor() throws Exception {
+        assertEquals("\n should be a separator", 6, stringCalculator.add("1\n2\n3"));
+    }
+
+    @Test
+    public void handle_new_line_and_comma_separator() throws Exception {
+        assertEquals("If there is only one number it should be the result", 6, stringCalculator.add("1,2\n3"));
     }
 }
