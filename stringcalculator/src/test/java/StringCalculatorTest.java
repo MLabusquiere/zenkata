@@ -46,4 +46,9 @@ public class StringCalculatorTest {
     public void handle_new_line_and_comma_separator() throws Exception {
         assertEquals("If there is only one number it should be the result", 6, stringCalculator.add("1,2\n3"));
     }
+
+    @Test
+    public void handle_separator_as_first_line() throws Exception {
+        assertEquals("If the first line is not a number then it's a separator if there is only one char", 6, stringCalculator.add(";\n3;1;2"));
+    }
 }

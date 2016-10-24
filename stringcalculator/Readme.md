@@ -12,7 +12,7 @@ Allow the Add method to handle new lines between numbers (instead of commas).
     the following input is ok: "1\n2,3" (will equal 6)
     the following input is NOT ok: "1,\n" (not need to prove it - just clarifying)
 
-Support different delimiters. To change a delimiter,
+Support different delimiters. To chang  e a delimiter,
 the beginning of the string will contain a separate line that looks like this: [delimiter]\n[numbers...], 
 for example ;\n1;2 should return three where the default delimiter is ; .
     he first line is optional. all existing scenarios should still be supported
